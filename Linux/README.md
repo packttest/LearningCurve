@@ -45,18 +45,12 @@ On a linux machine, list of available shell(s) can be found at the `/etc/shells`
 
 There are two different methods to invoke shell prompt. Interactive and Non-interactive method.
 
-Interactive method, reads command from the terminal `tty`. Usually, successful login will start interactive session. To login to the system it runs `/bin/login` to ask user name and password. Password is verified with the help of the `/bin/passwd` file. User specific shell can be configured in the `/bin/passwd`, if not configured `/bin/sh` is default shell. On successful login, usually shell will read `/etc/profile` and `~/.bash_profile` to configure shell environment.
+Interactive method, reads command from the terminal `tty`. Usually, successful login will start interactive session. For login process, system runs `/bin/login` to ask user name and password. Password is verified with the help of the `/bin/passwd` file. User specific shell can be configured in the `/bin/passwd`, if not configured `/bin/sh` is default shell. On successful login, usually shell will read `/etc/profile` and `~/.bash_profile` to configure a shell environment.
 * `/etc/profile` stores system wide environment and runs startup programs from `/etc/profile.d/*.sh`
 * `~/.bash_profile` stores user or application specific environment variables. This startup file only executes when login shell, either locally or remotely. For example: `sudo su -`, `bash --login`, or `ssh user@host` methodes.
 
-Non-interactive method does not involve human interaction with the shell. System user can not run commands, manually. For example running a shell script is an exmaple of non-interactive mode. Usually, non-interactive shell scripts runns in a back ground with out any human intervantion. But shell scripts can also be a interactive and they may wait for a user to provide an input.
+**NOTE:** If `~/.bash_profile` file is not found than interactive login shell will search `~/.bash_login` and `~/.profile`. Out of these three files `~/.bash_profile`, `~/.bash_login` or `~/.profile` only one file is going to be executed. First priority is for `~/.bash_profile`, second priority is for `~/.bash_login` and last priority is for `~/.profile`. It is not recommonded to use `~/.bash_login` or `~/.profile` on Bourne shell, as they were introduced for the compatibility with other shells such as C shell and Korn shell. But due to basic difference in the systax among these shells, it is recommonded not to use `~/.bash_login` and `~/.profile` on Bourne shell.
 
-On starting a the shell, executes several startup files to create an environment. Execution of startup files totally depends on the shell execution method (i.e. interactive or non-interactive).
+An interactive non-login shell, such as openning a new tab in a terminal using `ctrl + t` or runing the shell using GUI will inherit an environment from parent and execute `~/.bashrc`. From commnad line these command `sudo su`, `bash` or `ssh user@host /path/to/command` also creates interactive non-login session. These two `~/.bash_profile` and `~/.bashrc` helps to differentiate between new user session and just adding a new session from logged-in user. And to run specific commands or to adjust an shell environemnt accordingly. 
 
-Bash startup files are as follow. Either of the login method (i.e. interactive shell and non-interactive shell) will deicde which startup file will be executed. Example of interactive mode is a shell prompt, where commands can be executed and communication with linux is live. Example of non-interactive login is running the shell from GUI or running a shell script.
-
-* `/etc/profile` it is used to set system wide configuration parameters. Also will execute the scripts within `/etc/profile.d/*.sh`
-* `~/.bash_profile, ~/.bash_login` or `~/.profile`these files are used to set shell environent such as `PATH`. This file overrides the `/etc/profile`.
-* `~/.bash_logout`
-
-`~/.bashrc` file is used when bash shell is opened using a GUI.
+Non-interactive method does not involve human interaction with the shell such as running a shell script. Usually, running a shell script doesn't involve fa human inputs or interaction. Shell scripts can also be a interactive and they may wait for a user to provide an input. This type of shell inherits environment from parent shell only, as they do not have any startup files to set an envrionemnt.
