@@ -60,7 +60,7 @@ An **interactive non-login shell**, such as openning a new tab in a terminal usi
 The shell prompt is amanaged by shell variables. `P1`, `P2`, `P3`, `P4` and `PROMPT_COMMAND`.
 
 Prompt Variable | Description
------------------------------
+----------------|------------
 P1 |
 P2 |
 P3 |
