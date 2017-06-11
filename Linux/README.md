@@ -5,9 +5,10 @@ It is a program, which is responsible to take input in the form of commands from
 
 The things can be done with the help of shell prompt can also be done with the help of Graphical User Interface (GUI). Many times shell prompt is much faster than the GUI.
 
-Usually one command is provided on the shell prompt to execute. `&&` can be used to place a next command to execute on the successful execution of the first command. For example:
+Usually one command is provided on the shell prompt to execute. `&&` can be placed at the end of command to execute a consequent command. Consequent command will only execute when previous command execution is success. For example, syntax is as follow:
 
-```$ <command 1> && <Command 2>```
+Syntax:
+```$ <command 1> && <Command 2> && ... && <Command n>```
 
 ### Shell types
 In Unix/Linux shell types are broadly devided into two categories:
