@@ -25,3 +25,8 @@ In Unix/Linux shell types are broadly devided into two categories:
   * TENEX/TOPS C shell (tcsh) and any others.
 
 On a linux machine, list of available shell(s) can be found at the `/etc/sheslls` file. For each linux user shell can be different, it can be configured at the `/etc/passwd`.
+
+Bash startup files are as follow:
+* ```/etc/profile```
+* ```~/.bash_profile, ~/.bash_login or ~/.profile```
+* ```~/.bash_logout```
