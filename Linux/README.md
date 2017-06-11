@@ -19,6 +19,19 @@ In Unix/Linux shell types are broadly devided into two categories:
   * C shell (csh)
   * TENEX/TOPS C shell (tcsh) and any others.
 
+### Basics about the Bourne Shell
+
+Default shell prompt is having four components. For example shell prompt looks like as follow:
+
+`bhavin@vm1 ~ $` 
+Where
+ * `bhavin` indicates the logged-in user name.
+ * `vm1` indicates the hostname of the machine.
+ * `~` indicates the present working directory, `~` means home directory.
+ * `$` indicates currently working as a non-root user.
+ 
+ **NOTE:** Default shell prompt may defer from OS and it's version. It can also be customized.
+ 
 Usually one command is provided on the shell prompt to execute. `&&` can be placed at the end of command to execute a consequent command. Consequent command will only execute when previous command execution is success. Syntax is as follow:
 
 Syntax:
@@ -28,7 +41,7 @@ To complete advance level tasks, bunch of linux commands in a sequential order w
 
 **NOTE:** Shell scripts syntax would be different for the Bourne shell and the C Shell.
 
-On a linux machine, list of available shell(s) can be found at the `/etc/sheslls` file. For each linux user shell can be different, it can be configured at the `/etc/passwd`.
+On a linux machine, list of available shell(s) can be found at the `/etc/shells` file. For each linux user shell can be different, it can be configured at the `/etc/passwd`.
 
 Bash startup files are as follow. Either of the login method (i.e. interactive shell and non-interactive shell) will deicde which startup file will be executed. Example of interactive mode is a shell prompt, where commands can be executed and communication with linux is live. Example of non-interactive login is running the shell from GUI or running a shell script.
 * `/etc/profile` it is used to set system wide configuration parameters. Also will execute the scripts within `/etc/profile.d/*.sh`
