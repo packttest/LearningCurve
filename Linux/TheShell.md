@@ -55,3 +55,14 @@ An **interactive non-login shell**, such as openning a new tab in a terminal usi
 
 **Non-interactive shell** method does not involve human interaction with the shell such as running a shell script. Usually, running a shell script doesn't involve fa human inputs or interaction. Shell scripts can also be a interactive and they may wait for a user to provide an input. This type of shell inherits environment from parent shell only, as they do not have any startup files to set an envrionemnt.
 
+### Shell Prompt
+
+The shell prompt is amanaged by shell variables. `P1`, `P2`, `P3`, `P4` and `PROMPT_COMMAND`.
+
+Prompt Variable | Description
+-----------------------------
+P1 |
+P2 |
+P3 |
+P4 |
+PROMT_COMMAND |
