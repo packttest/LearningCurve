@@ -19,7 +19,7 @@ In Unix/Linux shell types are broadly devided into two categories:
   * C shell (csh)
   * TENEX/TOPS C shell (tcsh) and any others.
 
-### Basics about the Bourne Shell
+### Bourne Shell (Basics)
 
 Default shell prompt is having four components. For example shell prompt looks like as follow:
 
@@ -43,7 +43,13 @@ To complete advance level tasks, bunch of linux commands in a sequential order w
 
 On a linux machine, list of available shell(s) can be found at the `/etc/shells` file. For each linux user shell can be different, it can be configured at the `/etc/passwd`.
 
+There are two different methods to invoke shell prompt. One is interactive method. It reads command from the terminal `tty`. When shell executes to show terminal it also executes startup files, display prompt and enables job control by default. In this mode user can interact with the shell with giving commands and seeing output of the same. 
+
 Bash startup files are as follow. Either of the login method (i.e. interactive shell and non-interactive shell) will deicde which startup file will be executed. Example of interactive mode is a shell prompt, where commands can be executed and communication with linux is live. Example of non-interactive login is running the shell from GUI or running a shell script.
+
+> ### What is job control?
+> In Linux, every running program is called as a process. Linux is a multi-user and multi-tasking OS. It means multiple users can loggin to the same server and can run multiple prograams at the same time during their session with the server. While running one or more processes on a server through shell prompt, the ability to retrieve information about these processes are called as job control. These jobs can run in the foreground or in background. Usually, only one process or job remains in the foreground and keyboard input goes to it. Rest of the processess may remain in the background or paused (suspended). Process management it self is a big topic.
+
 * `/etc/profile` it is used to set system wide configuration parameters. Also will execute the scripts within `/etc/profile.d/*.sh`
 * `~/.bash_profile, ~/.bash_login` or `~/.profile`these files are used to set shell environent such as `PATH`. This file overrides the `/etc/profile`.
 * `~/.bash_logout`
