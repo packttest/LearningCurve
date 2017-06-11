@@ -1,4 +1,4 @@
 # Linux
 
 ### What is The Shell?
-It is a program, which is responsible to take inputs in the form of commands from a user and pass it to the Operating System (OS) to execute. Once OS executes command, output is also returned and siplayed on the shell.
+It is a program, which is responsible to take inputs in the form of commands from a user and pass it to the Operating System (OS) to execute. Once OS executes command, output is also returned and diplayed on the shell.
