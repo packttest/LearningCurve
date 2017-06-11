@@ -21,7 +21,7 @@ In Unix/Linux shell types are broadly devided into two categories:
 
 ### Bourne Shell (Basics)
 
-Default shell prompt is having four components. For example shell prompt looks like as follow:
+Default shell `/bin/bash` prompt is having four components. For example shell prompt looks like as follow:
 
 `bhavin@vm1 ~ $` 
 Where
@@ -45,14 +45,13 @@ On a linux machine, list of available shell(s) can be found at the `/etc/shells`
 
 There are two different methods to invoke shell prompt. Interactive and Non-interactive method.
 
-In interactive method, reads command from the terminal `tty`. When shell executes to show terminal it also executes startup files, display prompt and enables job control by default. In this mode user can interact with the shell with giving commands and seeing output of the same. 
-
-> ### What is job control?
-> In Linux, every running program is called as a process. Linux is a multi-user and multi-tasking OS. It means multiple users can loggin to the same server and can run multiple prograams at the same time during their session with the server. While running one or more processes on a server through shell prompt, the ability to retrieve information about these processes are called as job control. These jobs can run in the foreground or in background. Usually, only one process or job remains in the foreground and keyboard input goes to it. Rest of the processess may remain in the background or paused (suspended). Process management it self is a big topic.
+Interactive method, reads command from the terminal `tty`. Usually, successful login will start interactive session. To login to the system it runs `/bin/login` to ask user name and password. Password is verified with the help of the `/bin/passwd` file. User specific shell can be configured in the `/bin/passwd`, if not configured `/bin/sh` is default shell. On successful login, usually shell will read `/etc/profile` and `~/.bash_profile` to configure shell environment.
+* `/etc/profile` stores system wide environment and runs startup programs from `/etc/profile.d/*.sh`
+* `~/.bash_profile` stores user or application specific environment variables. This startup file only executes when login shell, either locally or remotely. For example: `sudo su -`, `bash --login`, or `ssh user@host` methodes.
 
 Non-interactive method does not involve human interaction with the shell. System user can not run commands, manually. For example running a shell script is an exmaple of non-interactive mode. Usually, non-interactive shell scripts runns in a back ground with out any human intervantion. But shell scripts can also be a interactive and they may wait for a user to provide an input.
 
-Shell execution method decide which all startup files to execute.
+On starting a the shell, executes several startup files to create an environment. Execution of startup files totally depends on the shell execution method (i.e. interactive or non-interactive).
 
 Bash startup files are as follow. Either of the login method (i.e. interactive shell and non-interactive shell) will deicde which startup file will be executed. Example of interactive mode is a shell prompt, where commands can be executed and communication with linux is live. Example of non-interactive login is running the shell from GUI or running a shell script.
 
