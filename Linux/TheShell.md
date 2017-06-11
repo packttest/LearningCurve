@@ -68,3 +68,6 @@ P2 | The value of this variable is expanded with PS1 and used for continuation o
 P3 | Exapanded value of `PS3`defines the prompt for a select inside a script. Default value is `#?`. `#?` will appear as a prompt where user shell prompt will be blinking and waiting for a user to provide input. it can be customized as `PS3="Provide your input:"` to appear a proper statement rather than just `#?`.
 P4 | It is used to define the prompt, displayed before each command bash displays during an trace execution.  The first character of PS4 is replicated multiple times, as necessary, to indicate multiple levels of indirection. The default is `+`.
 PROMT_COMMAND |
+
+#### Control commands for PS1 prompt
+
