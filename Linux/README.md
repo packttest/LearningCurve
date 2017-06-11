@@ -1,5 +1,5 @@
 # Linux
-###### Everything is from the internet, for the internet, through the internet. 
+###### Everything is from the internet, for the internet, through the internet. :metal:
 ### What is the shell?
 It is a program, which is responsible to take input in the form of commands from a user and pass it to the Operating System (OS) to execute. OS executes the recevied command, if it is valid than return the output. Or else relavent error. These output or error is displayd on the shell.
 
@@ -19,4 +19,4 @@ In Unix/Linux shell types are broadly devided into two categories:
   * C shell (csh)
   * TENEX/TOPS C shell (tcsh) and any others.
 
-On a linux machine, list of available shell(s) can be found at the '</etc/sheslls>' file. For each linux user shell can be different, it can be configured at the /etc/passwd.
+On a linux machine, list of available shell(s) can be found at the '</etc/sheslls>' file. For each linux user shell can be different, it can be configured at the /etc/passwd
