@@ -7,11 +7,14 @@ The things can be done with the help of shell prompt can also be done with the h
 
 ### Shell types
 In Unix/Linux shell types are broadly devided into two categories:
-1. The Bourne Shell. Default prompt is *$*. There are various sub-categories:
+1. The Bourne Shell. Default prompt is **$**. There are various sub-categories:
   * Bourne shell (sh)
   * Korn shell (ksh)
   * Bourne Again shell (bash)
   * POSIX shell (sh) and many others.
-2. The C Shell. Default prompt is *%*.
+  
+ **NOTE:** In 1970, Stephen R. Bourne has devloped shell at AT&T Bell Labs. It was the first shell appeared on UNIX system, hence it is called as "the shell".
+ 
+2. The C Shell. Default prompt is **%**.
   * C shell (csh)
   * TENEX/TOPS C shell (tcsh) and any others.
