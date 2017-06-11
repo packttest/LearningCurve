@@ -3,12 +3,7 @@
 ### What is the shell?
 It is a program, which is responsible to take input in the form of commands from a user and pass it to the Operating System (OS) to execute. OS executes the recevied command, if it is valid than return the output. Or else relavent error. These output or error is displayd on the shell.
 
-The things can be done with the help of shell prompt can also be done with the help of Graphical User Interface (GUI). Many times shell prompt is much faster than the GUI.
-
-Usually one command is provided on the shell prompt to execute. `&&` can be placed at the end of command to execute a consequent command. Consequent command will only execute when previous command execution is success. Syntax is as follow:
-
-Syntax:
-```$ <command 1> && <Command 2> && ... && <Command n>```
+Things can be done with the help of shell prompt can also be done with the help of Graphical User Interface (GUI). Many times, system administration tasks are much more faster and handy using shell prompt rather than GUI.
 
 ### Shell types
 In Unix/Linux shell types are broadly devided into two categories:
@@ -24,9 +19,20 @@ In Unix/Linux shell types are broadly devided into two categories:
   * C shell (csh)
   * TENEX/TOPS C shell (tcsh) and any others.
 
+Usually one command is provided on the shell prompt to execute. `&&` can be placed at the end of command to execute a consequent command. Consequent command will only execute when previous command execution is success. Syntax is as follow:
+
+Syntax:
+`$ <command 1> && <Command 2> && .... && <Command n>`
+
+To complete advance level tasks, bunch of linux commands in a sequential order with the logical control statements such as conditional and loop can be placed in a file. Such files are called as a shell script.
+
+**NOTE:** Shell scripts syntax would be different for the Bourne shell and the C Shell.
+
 On a linux machine, list of available shell(s) can be found at the `/etc/sheslls` file. For each linux user shell can be different, it can be configured at the `/etc/passwd`.
 
-Bash startup files are as follow:
-* ```/etc/profile```
-* ```~/.bash_profile, ~/.bash_login or ~/.profile```
-* ```~/.bash_logout```
+Bash startup files are as follow. Either of the login method (i.e. interactive shell and non-interactive shell) will deicde which startup file will be executed. Example of interactive mode is a shell prompt, where commands can be executed and communication with linux is live. Example of non-interactive login is running the shell from GUI or running a shell script.
+* `/etc/profile` it is used to set system wide configuration parameters. Also will execute the scripts within `/etc/profile.d/*.sh`
+* `~/.bash_profile, ~/.bash_login` or `~/.profile`these files are used to set shell environent such as `PATH`. This file overrides the `/etc/profile`.
+* `~/.bash_logout`
+
+`~/.bashrc` file is used when bash shell is opened using a GUI.
