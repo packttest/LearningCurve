@@ -64,8 +64,8 @@ The shell prompt is amanaged by shell variables. `P1`, `P2`, `P3`, `P4` and `PRO
 Prompt Variable | Description
 ----------------|------------
 P1 | It is a primary prompt variable. The shell prompt appears as soon as logged in (SSH) to the server, default prompt is created with the values defined in the `PS1`. `echo $PS1` displayes the current value. Usually it containes `\u@\h:\w\$`. Where `\u` represents current user name, `\h` is a host name and `\w` is a working directory. Default shell prompt can be customized by re-initializing variable at:
- | * `/etc/profile` or `/etc/bashrc` for systemwide change
- | * `~/.bash_profile`, `~/.bash_login`, `~/.profile`, `~/bashrc` to change just for any particular system user.
+ | <br/> * `/etc/profile` or `/etc/bashrc` for systemwide change
+ | <br/> * `~/.bash_profile`, `~/.bash_login`, `~/.profile`, `~/bashrc` to change just for any particular system user.
 P2 | Used for continuation of command. Default value is `>`. For example while typing a long command, for ease of reading usually we split command on multiple lines with `\`. That time new line appears with `>`.
 P3 |
 P4 |
