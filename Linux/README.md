@@ -1,5 +1,5 @@
 # Linux
-###### Everything is 
+###### Everything is from the internet, for the internet, through the internet.
 ### What is the shell?
 It is a program, which is responsible to take input in the form of commands from a user and pass it to the Operating System (OS) to execute. OS executes the recevied command, if it is valid than return the output. Or else relavent error. These output or error is displayd on the shell.
 
