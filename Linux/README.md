@@ -5,6 +5,10 @@ It is a program, which is responsible to take input in the form of commands from
 
 The things can be done with the help of shell prompt can also be done with the help of Graphical User Interface (GUI). Many times shell prompt is much faster than the GUI.
 
+Usually one command is provided on the shell prompt to execute. `&&` can be used to place a next command to execute on the successful execution of the first command. For example:
+
+```$ <command 1> && <Command 2>```
+
 ### Shell types
 In Unix/Linux shell types are broadly devided into two categories:
 1. The Bourne Shell. Default prompt is **$**. There are various sub-categories:
@@ -19,4 +23,4 @@ In Unix/Linux shell types are broadly devided into two categories:
   * C shell (csh)
   * TENEX/TOPS C shell (tcsh) and any others.
 
-On a linux machine, list of available shell(s) can be found at the '</etc/sheslls>' file. For each linux user shell can be different, it can be configured at the /etc/passwd
+On a linux machine, list of available shell(s) can be found at the `/etc/sheslls` file. For each linux user shell can be different, it can be configured at the `/etc/passwd`.
