@@ -55,14 +55,18 @@ An **interactive non-login shell**, such as openning a new tab in a terminal usi
 
 **Non-interactive shell** method does not involve human interaction with the shell such as running a shell script. Usually, running a shell script doesn't involve fa human inputs or interaction. Shell scripts can also be a interactive and they may wait for a user to provide an input. This type of shell inherits environment from parent shell only, as they do not have any startup files to set an envrionemnt.
 
+`~/.bash_logout` script is always executed before shell is terminating.
+
 ### Shell Prompt
 
 The shell prompt is amanaged by shell variables. `P1`, `P2`, `P3`, `P4` and `PROMPT_COMMAND`.
 
 Prompt Variable | Description
 ----------------|------------
-P1 |
-P2 |
+P1 | It is a primary prompt variable. The shell prompt appears as soon as logged in (SSH) to the server, default prompt is created with the values defined in the `PS1`. `echo $PS1` displayes the current value. Usually it containes `\u@\h:\w\$`. Where `\u` represents current user name, `\h` is a host name and `\w` is a working directory. Default shell prompt can be customized by re-initializing variable at:
+* `/etc/profile` or `/etc/bashrc` for systemwide change
+* `~/.bash_profile`, `~/.bash_login`, `~/.profile`, `~/bashrc` to change just for any particular system user.
+P2 | Used for continuation of command. Default value is `>`. For example while typing a long command, for ease of reading usually we split command on multiple lines with `\`. That time new line appears with `>`.
 P3 |
 P4 |
 PROMT_COMMAND |
