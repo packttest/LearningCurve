@@ -9,14 +9,7 @@ It is a program, which is responsible for taking user input in the form of comma
 
 To get detailed understanding of a command:
 * `$ ls --help` will provide quick help on the screen only. Usually shows quick introduction to the command, syntax and options.
-* `$ man ls` will provide help for almost every command on a system. Sometimes also provides help about configuration files, whose `man` pages are defined. With the help of `Tab` command complettion can be used. Fort hat `bash-completion` must be installed on the system. <br><br> `man` pages are grouped into sections. <br> 1 Executable programs or shell commands <br>2 System calls (functions provided by the kernel)
-       3   Library calls (functions within program libraries)
-       4   Special files (usually found in /dev)
-       5   File formats and conventions eg /etc/passwd
-       6   Games
-       7   Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7)
-       8   System administration commands (usually only for root)
-       9   Kernel routines [Non standard]
+* `$ man ls` will provide help for almost every command on a system. Sometimes also provides help about configuration files, whose `man` pages are defined. With the help of `Tab` command complettion can be used. Fort hat `bash-completion` must be installed on the system. <br><br> `man` pages are grouped into sections. <br>`1` Executable programs or shell commands <br>`2` System calls (functions provided by the kernel) <br>`3` Library calls (functions within program libraries) <br>`4` Special files (usually found in /dev) <br>`5` File formats and conventions eg /etc/passwd <br>`6` Games <br>`7` Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7) <br>`8` System administration commands (usually only for root) <br>`9` Kernel routines [Non standard] <br>`0` C library header files <br>`n` `Tcl/Tk` keywords <br> `x` The Xwindows System <br> Different system may have different number of sections. In general, 1 to 8 sections are available in most of the Linux OS. <br><br>To open a particular `man` page, use the following syntax:<br>`man <page number> <command> <br><br> For example:<br>`$ man 1 ls` will open section 1 for the `ls` linux command. For each linux commands all or few of these sections only may exist. When tried to retriev unavailable sections it will give an error, as follow:<br>`$ man 2 ls` <br>`No manual entry for ls in section 2`
 
 * `$ info ls` The GNU project distributies most of its on-line manuals in the "Info format". Read by "Info reader".
 
