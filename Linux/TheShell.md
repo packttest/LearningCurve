@@ -53,6 +53,8 @@ AN **interactive shell** method, reads command from the terminal `tty`. Usually,
 
 An **interactive non-login shell**, such as openning a new tab in a terminal using `ctrl + t` or runing the shell using GUI will inherit an environment from parent and execute `~/.bashrc`. From commnad line these command `sudo su`, `bash` or `ssh user@host /path/to/command` also creates interactive non-login session. These two `~/.bash_profile` and `~/.bashrc` helps to differentiate between new user session and just adding a new session from logged-in user. And to run specific commands or to adjust an shell environemnt accordingly. 
 
+**NOTE:** In Linux, rc means run commands. Assuming, rc in a `.bashrc` file name is given to make a meaniful name, indicating a set of commands to execute at the time of creating another shell terminal for already logged in user.
+
 **Non-interactive shell** method does not involve human interaction with the shell such as running a shell script. Usually, running a shell script doesn't involve fa human inputs or interaction. Shell scripts can also be a interactive and they may wait for a user to provide an input. This type of shell inherits environment from parent shell only, as they do not have any startup files to set an envrionemnt.
 
 `~/.bash_logout` script is always executed before shell is terminating.
