@@ -1,7 +1,14 @@
 # Linux
 ###### Everything is from the internet, for the internet, through the internet. :metal:
 ### What is the shell?
-It is a program, which is responsible for taking user input in the form of commands and pass it to the Operating System (OS) to execute. OS executes the recevied command if it is a valid command with the valid syntax than OS returns output or relavent error. This output or error is displayd on the shell.
+It is a program, which is responsible for taking user input in the form of commands and pass it to the Operating System (OS) to execute. OS executes the recevied command if it is a valid command with the valid syntax than OS returns output or relavent error. This output or error is displayd on the shell. Usual Linux command sysntax have following conventions:
+* **[]** Square brackets surrounded are optional items.
+* **...** means arbitary-length list of items of that type.
+* **|** when multiple items are seprated by pipes, means only one of them can be specified.
+* **< >** Angle brackets, means variable data.
+
+To get detailed understanding of a command:
+* `$ ls --help` will provide basic help, along with usage and arguments.
 
 Most of the system administration tasks which can be done with the help of shell prompt can also be done with the help of Graphical User Interface (GUI). Many times, performing a system administration tasks are much more faster and handy using shell prompt rather than GUI.
 
@@ -15,7 +22,7 @@ In Unix/Linux shell types are broadly divided into two categories:
   
  **NOTE:** In 1970, Stephen R. Bourne has developed shell at AT&T Bell Labs. It was the first shell appeared on a UNIX system, hence it is called as "the shell".
 
-**NOTE:** Bash shell is accessed through a terminal. It is also called as a physical console.
+**NOTE:** Bash shell is accessed through a terminal. It is also called as a physical console. Physical console supports multiple virtual console. Each virtual console is a seprate terminal and supports seprate login. Pressing `Ctrl + Alt + F1` to `F7` gives access to each of these virtual access. To close the shell session either `exit` or `Ctrl + d` can be used.
 
 2. The C Shell. The default prompt is `%`. Shell prompt will be `%` when logged in as non-root user and `#` when logged in as `root` user.
   * C shell (csh)
