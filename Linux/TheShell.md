@@ -1,27 +1,29 @@
 # Linux
 ###### Everything is from the internet, for the internet, through the internet. :metal:
 ### What is the shell?
-It is a program, which is responsible to take user input in the form of commands and pass it to the Operating System (OS) to execute. OS executes the recevied command, if it is valid command with the valid syntax than OS returns output or relavent error. These output or error is displayd on the shell.
+It is a program, which is responsible for taking user input in the form of commands and pass it to the Operating System (OS) to execute. OS executes the recevied command if it is a valid command with the valid syntax than OS returns output or relavent error. This output or error is displayd on the shell.
 
 Most of the system administration tasks which can be done with the help of shell prompt can also be done with the help of Graphical User Interface (GUI). Many times, performing a system administration tasks are much more faster and handy using shell prompt rather than GUI.
 
 ### Shell types
-In Unix/Linux shell types are broadly devided into two categories:
-1. The Bourne Shell. Default prompt is `$`. Shell prompt will be `$` when logged in with non-root user and `#` when logged in with `root` user. There are various sub-categories:
+In Unix/Linux shell types are broadly divided into two categories:
+1. The Bourne Shell. Default prompt is `$`. Shell prompt will be `$` when logged in as a non-root user and `#` when logged in as `root` user. There are various sub-categories:
   * Bourne shell (sh)
   * Korn shell (ksh)
   * Bourne Again shell (bash)
   * POSIX shell (sh) and many others.
   
- **NOTE:** In 1970, Stephen R. Bourne has devloped shell at AT&T Bell Labs. It was the first shell appeared on UNIX system, hence it is called as "the shell".
- 
-2. The C Shell. Default prompt is `%`. Shell prompt will be `%` when logged in with non-root user and `#` when logged in with `root` user.
+ **NOTE:** In 1970, Stephen R. Bourne has developed shell at AT&T Bell Labs. It was the first shell appeared on a UNIX system, hence it is called as "the shell".
+
+**NOTE:** Bash shell is accessed through a terminal. It is also called as a physical console.
+
+2. The C Shell. The default prompt is `%`. Shell prompt will be `%` when logged in as non-root user and `#` when logged in as `root` user.
   * C shell (csh)
   * TENEX/TOPS C shell (tcsh) and any others.
 
 ### Bourne Shell (Basics)
 
-Default shell `/bin/bash` prompt is having four components. For example defult shell prompt looks like as follow:
+Default shell `/bin/bash` prompt is having four components. For example default shell prompt looks like as follow:
 
 `bhavin@vm1 ~ $` 
 Where
@@ -30,7 +32,7 @@ Where
  * `~` indicates the present working directory, `~` means home directory.
  * `$` indicates currently working as a non-root user.
  
- **NOTE:** Default shell prompt may defer from linux varients and it's version. It can also be customized.
+ **NOTE:** Default shell prompt may defer from Linux varients and it's version. It can also be customized.
  
 Usually one command is provided on the shell prompt to execute. `&&` can be placed at the end of command to execute a consecutive command. Consequent command will only execute when previous command execution is success. Syntax is as follow:
 
@@ -41,11 +43,11 @@ To automate regular system administration tasks, a bunch of linux commands can b
 
 **NOTE:** Shell scripts syntax would be different for the Bourne shell and the C Shell.
 
-On a linux machine, list of available shell(s) can be found at the `/etc/shells` file. For each linux user shell can be different, it can be configured at the `/etc/passwd`.
+On a linux machine, a list of an available shell(s) can be found in the `/etc/shells` file. For each linux user shell can be different, it can be configured at the `/etc/passwd`.
 
 There are two different methods to invoke shell prompt. Interactive and Non-interactive method.
 
-AN **interactive shell** method, reads command from the terminal `tty`. Usually, successful login will start interactive session. For login process, system runs `/bin/login` to ask user name and password. Password is verified with the help of the `/bin/passwd` file. User specific shell can be configured in the `/bin/passwd`, if not configured `/bin/sh` is default shell. On successful login, usually shell will read `/etc/profile` and `~/.bash_profile` to configure a shell environment.
+AN **interactive shell** method, reads command from the terminal `tty`. Usually, successful login will start interactive session. For login process, system runs `/bin/login` to ask username and password. Password is verified with the help of the `/bin/passwd` file. User specific shell can be configured in the `/bin/passwd`, if not configured `/bin/sh` is default shell. On successful login, usually shell will read `/etc/profile` and `~/.bash_profile` to configure a shell environment.
 * `/etc/profile` stores system wide environment and runs startup programs from `/etc/profile.d/*.sh`
 * `~/.bash_profile` stores user or application specific environment variables. This startup file only executes when login shell, either locally or remotely. For example: `sudo su -`, `bash --login`, or `ssh user@host` methodes.
 
@@ -55,13 +57,13 @@ An **interactive non-login shell**, such as openning a new tab in a terminal usi
 
 **NOTE:** In Linux, rc means run commands. Assuming, rc in a `.bashrc` file name is given to make a meaniful name, indicating a set of commands to execute at the time of creating another shell terminal for already logged in user.
 
-**Non-interactive shell** method does not involve human interaction with the shell such as running a shell script. Usually, running a shell script doesn't involve fa human inputs or interaction. Shell scripts can also be a interactive and they may wait for a user to provide an input. This type of shell inherits environment from parent shell only, as they do not have any startup files to set an envrionemnt.
+**Non-interactive shell** method does not involve human interaction with the shell such as running a shell script. Usually, running a shell script doesn't involve fa human inputs or interaction. Shell scripts can also be a interactive and they may wait for a user to provide an input. This type of shell inherits environment from parent shell only, as they do not have any startup files to set an environment.
 
-`~/.bash_logout` script is always executed before shell is terminating.
+`~/.bash_logout` script is always executed before the shell is terminating.
 
 ### Shell Prompt
 
-The shell prompt is amanaged by shell variables. `P1`, `P2`, `P3`, `P4` and `PROMPT_COMMAND`.
+The shell prompt is managed by shell variables. `P1`, `P2`, `P3`, `P4` and `PROMPT_COMMAND`.
 
 Prompt Variable | Description
 ----------------|------------
@@ -71,4 +73,4 @@ P3 | Exapanded value of `PS3`defines the prompt for a select inside a script. De
 P4 | It is used to define the prompt, displayed before each command bash displays during an trace execution.  The first character of PS4 is replicated multiple times, as necessary, to indicate multiple levels of indirection. The default is `+`.
 PROMT_COMMAND | Content of this varibale is executed as a regular Linux command and output is displayed just before displaying the shell prompt. <br> <br> Example:<br> `$ echo $PS1` <br>`[\u@\h \W]\$` <br> <br> Now let's configure value for `PROMPT_COMMAND`. <br> `$ PROMPT_COMMAND="date +%H:%M"`<br> `04:15` <br> `[bhavin@vm1 ~]$` <br><br> Now before displaying the shell prompt it will display current system time. Usually both appears on a seprate line. To make them appear on the same line configure `PROMPT_COMMAND` with the `echo -n` as shown in the following example: <br><br> `$ PROMPT_COMMAND="echo -n PROMPT_COMMAND="echo -n [$(date +%H::%M)]"`<br>`[04::16][ec2-user@ip-172-31-27-254 ~]$`<br><br> Now we can see output of `PROMPT_COMMAND` is appearing on the same line as the shell prompt.
 
-**NOTE:** Linux help `man bash` provides detailed guideline.
+**NOTE:** Linux help `man bash` provides a detailed guideline.
