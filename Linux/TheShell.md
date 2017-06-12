@@ -1,9 +1,9 @@
 # Linux
 ###### Everything is from the internet, for the internet, through the internet. :metal:
 ### What is the shell?
-It is a program, which is responsible to take input in the form of commands from a user and pass it to the Operating System (OS) to execute. OS executes the recevied command, if it is valid than return the output. Or else relavent error. These output or error is displayd on the shell.
+It is a program, which is responsible to take user input in the form of commands and pass it to the Operating System (OS) to execute. OS executes the recevied command, if it is valid command with the valid syntax than OS returns output or relavent error. These output or error is displayd on the shell.
 
-Things can be done with the help of shell prompt can also be done with the help of Graphical User Interface (GUI). Many times, system administration tasks are much more faster and handy using shell prompt rather than GUI.
+Most of the system administration tasks which can be done with the help of shell prompt can also be done with the help of Graphical User Interface (GUI). Many times, performing a system administration tasks are much more faster and handy using shell prompt rather than GUI.
 
 ### Shell types
 In Unix/Linux shell types are broadly devided into two categories:
@@ -21,7 +21,7 @@ In Unix/Linux shell types are broadly devided into two categories:
 
 ### Bourne Shell (Basics)
 
-Default shell `/bin/bash` prompt is having four components. For example shell prompt looks like as follow:
+Default shell `/bin/bash` prompt is having four components. For example defult shell prompt looks like as follow:
 
 `bhavin@vm1 ~ $` 
 Where
@@ -30,14 +30,14 @@ Where
  * `~` indicates the present working directory, `~` means home directory.
  * `$` indicates currently working as a non-root user.
  
- **NOTE:** Default shell prompt may defer from OS and it's version. It can also be customized.
+ **NOTE:** Default shell prompt may defer from linux varients and it's version. It can also be customized.
  
-Usually one command is provided on the shell prompt to execute. `&&` can be placed at the end of command to execute a consequent command. Consequent command will only execute when previous command execution is success. Syntax is as follow:
+Usually one command is provided on the shell prompt to execute. `&&` can be placed at the end of command to execute a consecutive command. Consequent command will only execute when previous command execution is success. Syntax is as follow:
 
 Syntax:
 `$ <command 1> && <Command 2> && .... && <Command n>`
 
-To complete advance level tasks, bunch of linux commands in a sequential order with the logical control statements such as conditional and loop can be placed in a file. Such files are called as a shell script.
+To automate regular system administration tasks, a bunch of linux commands can be placed in the file. This file is called as a shell script. Usually execution takes place in a sequential order. With the help of looping and conditional statements, complex program can also be written to resolve advanced problems.
 
 **NOTE:** Shell scripts syntax would be different for the Bourne shell and the C Shell.
 
@@ -67,7 +67,4 @@ P1 | The value of this parameter is expanded to create a primary shell prompt. T
 P2 | The value of this variable is expanded with PS1 and used for continuation of command. It is also called as the secondary prompt string. Default value is `>`. For example while typing a long command, for ease of reading usually we split command on multiple lines with `\`. That time new line appears with `>`.
 P3 | Exapanded value of `PS3`defines the prompt for a select inside a script. Default value is `#?`. `#?` will appear as a prompt where user shell prompt will be blinking and waiting for a user to provide input. it can be customized as `PS3="Provide your input:"` to appear a proper statement rather than just `#?`.
 P4 | It is used to define the prompt, displayed before each command bash displays during an trace execution.  The first character of PS4 is replicated multiple times, as necessary, to indicate multiple levels of indirection. The default is `+`.
-PROMT_COMMAND |
-
-#### Control commands for PS1 prompt
-
+PROMT_COMMAND | Content of this varibale is executed as a regular Linux command and output is displayed just before displaying the shell prompt. <br> <br> Example:<br> `$ echo $PS1` <br>`[\u@\h \W]\$` <br> <br> Now let's configure value for `PROMPT_COMMAND`. <br> `$ PROMPT_COMMAND="date +%H:%M"`<br> `04:15` <br>
