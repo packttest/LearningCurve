@@ -1,5 +1,5 @@
 # Linux
-###### Everything is from the internet, for the internet, through the internet. :metal:
+###### Everything is from the internet, for the internet, to the internet. :metal:
 ### What is the shell?
 It is a program, which is responsible for taking user input in the form of commands and pass it to the Operating System (OS) to execute. OS executes the recevied command if it is a valid command with the valid syntax than OS returns output or relavent error. This output or error is displayd on the shell. Usual Linux command sysntax have following conventions:
 * **[]** Square brackets surrounded are optional items.
