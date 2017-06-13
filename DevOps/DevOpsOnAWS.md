@@ -1,4 +1,4 @@
-# DevOps
+# DevOps on AWS
 
 In general, Dev means developers and Ops means Operations (infrastructure Operations). Common myth, DevOps is Dev + Ops only. But actually it is a lot more than that.
 
